@@ -16,3 +16,5 @@ Route::get('/','HomeController@index');
 Route::get('blog/{slug}','HomeController@detail');
 
 Route::get('category/{slug}','HomeController@category');
+
+// Route::get('search','HomeController@search')

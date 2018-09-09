@@ -10,8 +10,10 @@ class HomeController extends Controller
 
 	public function index()
 	{
-		$posts  = Post::select('posts.*','categories.slug as category_slug')->join('categories','categories.id','=','posts.category_id')->get(); 
-		return view('posts.index',['posts' => $posts]);
+		$posts  = Post::select('posts.*','categories.slug as category_slug')->join('categories','categories.id','=','posts.category_id')->paginate(6);
+		$lastest_posts = Post::orderBy('id','desc')->limit(5)->get();
+		$tags = \App\Tag::get();
+		return view('posts.index',['posts' => $posts,'lastest_posts'=>$lastest_posts,'tags'=>$tags]);
 	}
 
 	public function detail($slug)
@@ -22,11 +24,13 @@ class HomeController extends Controller
 
 	public function category($slug)
 	{
-		$category = \App\Category::where('slug',$slug)->firstOrFail();
-
-		$posts = \App\Post::where('category_id', $category->id)->get();
+		$posts = \App\Category::where('slug',$slug)->FirstOrFail()->posts;
 
 		return view('categories.index',['posts' => $posts]);
 	}
 
+	// public function search()
+	// {
+		
+	// }
 }

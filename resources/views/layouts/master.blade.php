@@ -129,7 +129,7 @@
 
 <!-- SEARCH -->
 <div class="tada-search">
-   <form>
+   <form action="" method="">
      <div class="form-group-search">
         <input type="search" class="search-field" placeholder="Search and hit enter...">
         <button type="submit" class="search-btn"><i class="icon-search4"></i></button>
@@ -169,7 +169,7 @@
      </div>                
  </li>
  <li>
-     <img src="img/image-slider-4.jpg" alt="image slider 4">
+     <img src="{{ asset('blog_assets/img/image-slider-4.jpg') }}" alt="image slider 4">
      <div class="pattern"></div>
      <div class="tada-text-container">
          <h1>AENEAN AC DIAM</h1>
