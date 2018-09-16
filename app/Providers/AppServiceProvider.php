@@ -13,8 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('categories', \App\Category::get());
+     if (!\App::runningInConsole()) {
+         // if (Schema::hasTable('categories')) {
+            view()->share('categories', \App\Category::get());
+        //}
     }
+}
 
     /**
      * Register any application services.
