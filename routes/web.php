@@ -1,10 +1,10 @@
 <?php
 
-// Route::get('/','BlogController@index');
+Route::get('/','BlogController@index');
 
-// Route::get('blog/{slug}','BlogController@detail');
+Route::get('blog/{slug}','BlogController@detail');
 
-// Route::get('category/{slug}','BlogController@category');
+Route::get('category/{slug}','BlogController@category');
 
 
 // Route::get('/',function ()
@@ -24,4 +24,8 @@
 // {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-// });
+// });Auth::routes();
+Route::get('/hi', function ()
+{
+	echo "say hi"
+})

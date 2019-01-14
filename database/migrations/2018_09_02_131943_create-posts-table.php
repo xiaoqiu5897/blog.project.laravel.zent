@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->integer('view_count')->default(0); 
             $table->timestamps();
         });
+
     }
 
     /**
@@ -35,5 +36,6 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
+        
     }
 }

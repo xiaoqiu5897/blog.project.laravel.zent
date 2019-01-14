@@ -14,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
      if (!\App::runningInConsole()) {
-         // if (Schema::hasTable('categories')) {
+         if (Schema::hasTable('categories')) {
             view()->share('categories', \App\Category::get());
-        //}
+        }
     }
 }
 
