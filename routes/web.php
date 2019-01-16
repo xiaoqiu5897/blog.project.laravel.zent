@@ -10,6 +10,10 @@ Route::get('test',function ()
 {
 	echo "test okay";
 });
+Route::get('test2',function ()
+{
+	echo "test 2 okay";
+});
 
 
 // Route::get('/',function ()
