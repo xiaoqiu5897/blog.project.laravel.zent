@@ -6,6 +6,11 @@ Route::get('blog/{slug}','BlogController@detail');
 
 Route::get('category/{slug}','BlogController@category');
 
+Route::get('test',function ()
+{
+	echo "test okay";
+});
+
 
 // Route::get('/',function ()
 // {
